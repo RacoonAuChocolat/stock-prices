@@ -7,7 +7,7 @@
 const StockModel = require("../models").Stock;
 const fetch = require("node-fetch");
 
-//request process
+//request process using mongo as a tabaase for procesing
 
 async function createStock(stock, like, ip) {
   const newStock = new StockModel({
@@ -22,7 +22,7 @@ async function findStock(stock) {
   return await StockModel.findOne({ symbol: stock }).exec();
 }
 
-
+//return of the found
 
 async function saveStock(stock, like, ip) {
   let saved = {};
